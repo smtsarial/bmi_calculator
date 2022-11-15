@@ -2,6 +2,7 @@ import 'package:bmi_calculator_app/Screens/CalculatorScreen.dart';
 import 'package:bmi_calculator_app/Screens/HomeScreen.dart';
 import 'package:bmi_calculator_app/auth/SignUpScreen.dart';
 import 'package:bmi_calculator_app/main.dart';
+import 'package:bmi_calculator_app/widgets/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -146,6 +147,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 70,
                 padding: EdgeInsets.only(top: 20),
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: kbottomContainerColor,
+                    ),
                     child:
                         Text("Submit", style: TextStyle(color: Colors.white)),
                     onPressed: () {
@@ -153,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           emailController.text, passwordController.text)) {
                         Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => InputPage()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                           (Route<dynamic> route) => false,
                         );
                       } else {

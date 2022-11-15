@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:bmi_calculator_app/Screens/CalculatorScreen.dart';
+import 'package:bmi_calculator_app/Screens/HomeScreen.dart';
 import 'package:bmi_calculator_app/auth/LoginScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';

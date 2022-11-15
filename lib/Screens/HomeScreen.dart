@@ -1,5 +1,8 @@
+import 'package:bmi_calculator_app/Screens/CalculatorScreen.dart';
+import 'package:bmi_calculator_app/Screens/ProfileScreen.dart';
 import 'package:bmi_calculator_app/auth/SignUpScreen.dart';
 import 'package:bmi_calculator_app/main.dart';
+import 'package:bmi_calculator_app/widgets/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -13,41 +16,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedTab = 0;
+
+  List _pages = [
+    InputPage(),
+    Center(
+      child: Text("Home"),
+    ),
+    ProfilePage()
+  ];
+
+  _changeTab(int index) {
+    setState(() {
+      _selectedTab = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: true,
-        backgroundColor: const Color.fromRGBO(40, 38, 56, 1),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: Container(
-                  height: 400,
-                  width: 200,
-                  padding: EdgeInsets.all(20),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Successfull login!",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  )),
-            ),
-            Container(
-              height: 100,
-              width: 570,
-              padding: EdgeInsets.all(20),
-              child: ElevatedButton(
-                  child: Text("Logout", style: TextStyle(color: Colors.white)),
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
-                      (Route<dynamic> route) => false,
-                    );
-                  }),
-            )
-          ],
-        ));
+      body: SafeArea(child: _pages[_selectedTab]),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        currentIndex: _selectedTab,
+        onTap: (index) => _changeTab(index),
+        backgroundColor: kactiveCardColor,
+        selectedItemColor: kbottomContainerColor,
+        unselectedItemColor: Colors.grey,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.grid_3x3_outlined), label: "Product"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "About"),
+        ],
+      ),
+    );
   }
 }

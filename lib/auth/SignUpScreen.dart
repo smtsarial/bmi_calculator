@@ -1,4 +1,5 @@
 import 'package:bmi_calculator_app/main.dart';
+import 'package:bmi_calculator_app/widgets/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -75,6 +76,43 @@ class _SignupPageContent extends State<SignupPageContent> {
                 ),
               ),
             ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(top: 0.0),
+            child: new Stack(fit: StackFit.loose, children: <Widget>[
+              new Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  new Container(
+                      width: 140.0,
+                      height: 140.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                          image: new ExactAssetImage('assets/images/as.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      )),
+                ],
+              ),
+              Padding(
+                  padding: EdgeInsets.only(top: 90.0, right: 100.0),
+                  child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      new CircleAvatar(
+                        backgroundColor: kbottomContainerColor,
+                        radius: 25.0,
+                        child: new Icon(
+                          Icons.camera_alt,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  )),
+            ]),
           ),
 
           // Wrong password text
@@ -185,6 +223,9 @@ class _SignupPageContent extends State<SignupPageContent> {
             height: 70,
             padding: EdgeInsets.only(top: 20),
             child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: kbottomContainerColor,
+                ),
                 child: Text("Submit", style: TextStyle(color: Colors.white)),
                 onPressed: () async {
                   if (kDebugMode) {
