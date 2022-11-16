@@ -1,5 +1,6 @@
 import 'package:bmi_calculator_app/Screens/CalculatorScreen.dart';
 import 'package:bmi_calculator_app/Screens/ProfileScreen.dart';
+import 'package:bmi_calculator_app/Screens/SuggestionScreen.dart';
 import 'package:bmi_calculator_app/auth/SignUpScreen.dart';
 import 'package:bmi_calculator_app/main.dart';
 import 'package:bmi_calculator_app/widgets/constants.dart';
@@ -18,13 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedTab = 0;
 
-  List _pages = [
-    InputPage(),
-    Center(
-      child: Text("Home"),
-    ),
-    ProfilePage()
-  ];
+  List _pages = [InputPage(), SuggestionScreen(), ProfilePage()];
 
   _changeTab(int index) {
     setState(() {
