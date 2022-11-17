@@ -1,4 +1,3 @@
-
 import 'package:bmi_calculator_app/widgets/Components/BottomContainer_Button.dart';
 import 'package:bmi_calculator_app/widgets/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,24 +20,14 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('BMI CALCULATOR'),
-        ),
+        centerTitle: true,
+        backgroundColor: kactiveCardColor,
+        title: Text('Your Result'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                'Your Result',
-                style: ktitleTextStyle,
-              ),
-            ),
-          ),
           Expanded(
             flex: 5,
             child: ReusableBg(
