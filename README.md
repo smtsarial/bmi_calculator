@@ -9,11 +9,11 @@
   </tr>
   <tr>
     <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/1.png" width=270></td>
-    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/2.jpeg" width=270></td>
-    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/3.jpeg" width=270></td>
+    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/2.png" width=270></td>
+    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/3.png" width=270></td>
   </tr> 
   <tr>
-    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/4.jpeg" width=270></td>
-    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/5.jpeg" width=270></td>
+    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/4.png" width=270></td>
+    <td><img src="https://github.com/smtsarial/bmi_calculator/blob/main/images/5.png" width=270></td>
   </tr>
  </table>
